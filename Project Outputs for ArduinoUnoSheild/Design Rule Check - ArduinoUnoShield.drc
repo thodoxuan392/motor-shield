@@ -1,0 +1,77 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc
+Date     : 11/2/2022
+Time     : 11:13:08 AM
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: Top Layer-No Net On Top Layer
+   Polygon named: Top Layer-No Net1 In net GND On Top Layer
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net GND Between Pad DC-VIN-1(1000mil,810mil) on Multi-Layer And Pad HC05-3(2075mil,1025mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad DC-VIN-1(1000mil,810mil) on Multi-Layer And Pad IOH-7(1040mil,2000mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad LED-1(450mil,1150mil) on Multi-Layer And Pad DC-VIN-1(1000mil,810mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad DC-VIN-1(1000mil,810mil) on Multi-Layer And Pad POWER-3(1600mil,100mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad HC05-3(2075mil,1025mil) on Multi-Layer And Pad ICSP-6(2605.512mil,998.031mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad POWER-3(1600mil,100mil) on Multi-Layer And Pad POWER-2(1700mil,100mil) on Multi-Layer 
+Rule Violations :6
+
+Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad Free-0(2600mil,1400mil) on Multi-Layer Actual Hole Size = 125.984mil
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad Free-0(2600mil,300mil) on Multi-Layer Actual Hole Size = 125.984mil
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad Free-0(550mil,100mil) on Multi-Layer Actual Hole Size = 125.984mil
+   Violation between Hole Size Constraint: (125.984mil > 100mil) Pad Free-0(600mil,2000mil) on Multi-Layer Actual Hole Size = 125.984mil
+Rule Violations :4
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2455.512mil,1148.031mil)(2555.512mil,1148.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2455.512mil,1223.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2480.512mil,1248.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2555.512mil,1148.031mil)(2555.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-2(2605.512mil,1198.031mil) on Multi-Layer And Track (2480.512mil,1248.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-2(2605.512mil,1198.031mil) on Multi-Layer And Track (2555.512mil,1148.031mil)(2555.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-2(2605.512mil,1198.031mil) on Multi-Layer And Track (2655.512mil,948.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-3(2505.512mil,1098.031mil) on Multi-Layer And Track (2455.512mil,1148.031mil)(2555.512mil,1148.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-3(2505.512mil,1098.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2455.512mil,1223.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-4(2605.512mil,1098.031mil) on Multi-Layer And Track (2655.512mil,948.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-5(2505.512mil,998.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2455.512mil,1223.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-5(2505.512mil,998.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2655.512mil,948.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-6(2605.512mil,998.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2655.512mil,948.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (9.984mil < 10mil) Between Pad ICSP-6(2605.512mil,998.031mil) on Multi-Layer And Track (2655.512mil,948.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]
+Rule Violations :14
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (9.563mil < 10mil) Between Text "DC-VIN" (1025mil,935mil) on Top Overlay And Track (955mil,919mil)(1145mil,919mil) on Top Overlay Silk Text to Silk Clearance [9.563mil]
+Rule Violations :1
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Room ArduinoUnoShield (Bounding Region = (3945mil, 1195mil, 4535mil, 1660mil) (InComponentClass('ArduinoUnoShield'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 25
+Waived Violations : 0
+Time Elapsed        : 00:00:00

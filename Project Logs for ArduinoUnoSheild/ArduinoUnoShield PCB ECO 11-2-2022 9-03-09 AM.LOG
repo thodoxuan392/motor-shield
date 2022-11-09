@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=H1 NewDesignator=LED
+Change Component Designator: OldDesignator=H2 NewDesignator=DC-VIN
+Change Component Designator: OldDesignator=H3 NewDesignator=DC-DATAIN
+Change Component Designator: OldDesignator=H4 NewDesignator=DC-DATAOUT
+Change Component Designator: OldDesignator=H5 NewDesignator=HC05
+Change Component Designator: OldDesignator=H6 NewDesignator=MOTOR

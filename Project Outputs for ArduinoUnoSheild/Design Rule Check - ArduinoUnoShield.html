@@ -1,0 +1,429 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD18\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11/2/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:13:08 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc" class="file"><acronym title="C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc">C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">2</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">25</td></tr>
+</table>
+</td>
+</table><a name="IDTRABJAHDG355MEGUHVOBLMEJJQXA0NEPYCBA4OUXRIVBHPPXVRE"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYTXRCHKIWX4XDYTUKVMGYBT2SPQBKGXFBPPF4CKVLW0ZVSPA5MYJ">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</a></td>
+<td class="column2">2</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">2</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0WQTCUE3HP0WDQ0L2MB3QDTJCOYO1EUWHGTD5XDYJSZRKFVNLRPD">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID03XJFYZL2EEVDNEJMP05WF2ZOPOKUIHEKZG1UCN1GTKWJWH5WFON">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNNLJOIXSOZFTB3AVS30WOVVRVFQ3DOE2NNQWRY0SWM0D3EEYDAG">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAXNUFMXYSB1GDXDPJNWF3DKNLO134A0N50EBFVLEMAPK22SCXSUO">Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOGXU51XO4NVSJCEWLSJYMDCWT3J0ZIUDW23PALND1WO0LQH5AVP">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCMUCZMFSQGO3KIN4DRDKZNIOCNCRNTLMHQESATII2Y03RPZL1JV">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4BHFXDI3WEQIDVNSPUF2F4PHYJDMQYP15X1T0TM3OQK3CLLJHN2B">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDV2JMRYNXJYPKMQBPFJW1IQCA2NBVWTVXKP14N3DBVKDV2UMAKVEN">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0OBRJ3K1LOV0CPZGIXTSYGBWVLVNJNWSV1EV2UKFM1I32GXYNURO">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">14</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS0ZFB1MSH2LXGXXVTFEPXNXSAB52KMXZ5SCHBDDA5QJSWK5DE3ZJ">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID044WBBR0XQURNLTHV1Q01L1XUCERTW5LCW5CSLO5BUDLTIY13FMK">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT0PIKJLFGC3CPJJ1WZQK1XBTGORE2QBXUHDJR4H5OX2QUIOADRQM">Room ArduinoUnoShield (Bounding Region = (3945mil, 1195mil, 4535mil, 1660mil) (InComponentClass('ArduinoUnoShield'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID52NHJU3NM1AVLO4GILBDJZFZ3DRD4MFHPNGC4KIIVP0H45LG5CW">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">25</td>
+</tr>
+</table><br><a name="ID3I1JLRAUK4CMPIUCXQA0TON14GBZLTR3VZ52QPKJNOPHQ2DEYRML"><h2>Warnings</h2></a><a name="IDYTXRCHKIWX4XDYTUKVMGYBT2SPQBKGXFBPPF4CKVLW0ZVSPA5MYJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: Top Layer-No Net On Top Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: Top Layer-No Net1 In net GND On Top Layer</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNNLJOIXSOZFTB3AVS30WOVVRVFQ3DOE2NNQWRY0SWM0D3EEYDAG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2166.472mil|Location2.X=3308.528mil|Location1.Y=2006.473mil|Location2.Y=2288.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2166.472mil|Location2.X=3308.528mil|Location1.Y=2006.473mil|Location2.Y=2288.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad DC-VIN-1(1000mil,810mil) on Multi-Layer And Pad HC05-3(2075mil,1025mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2166.472mil|Location2.X=2274mil|Location1.Y=2006.473mil|Location2.Y=3264mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2166.472mil|Location2.X=2274mil|Location1.Y=2006.473mil|Location2.Y=3264mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad DC-VIN-1(1000mil,810mil) on Multi-Layer And Pad IOH-7(1040mil,2000mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.473mil|Location2.X=2233.528mil|Location1.Y=2006.473mil|Location2.Y=2413.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.473mil|Location2.X=2233.528mil|Location1.Y=2006.473mil|Location2.Y=2413.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad LED-1(450mil,1150mil) on Multi-Layer And Pad DC-VIN-1(1000mil,810mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2166.472mil|Location2.X=2834mil|Location1.Y=1296mil|Location2.Y=2073.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2166.472mil|Location2.X=2834mil|Location1.Y=1296mil|Location2.Y=2073.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad DC-VIN-1(1000mil,810mil) on Multi-Layer And Pad POWER-3(1600mil,100mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3241.472mil|Location2.X=3844.512mil|Location1.Y=2189.031mil|Location2.Y=2288.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3241.472mil|Location2.X=3844.512mil|Location1.Y=2189.031mil|Location2.Y=2288.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad HC05-3(2075mil,1025mil) on Multi-Layer And Pad ICSP-6(2605.512mil,998.031mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2766mil|Location2.X=2934mil|Location1.Y=1296mil|Location2.Y=1364mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2766mil|Location2.X=2934mil|Location1.Y=1296mil|Location2.Y=1364mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad POWER-3(1600mil,100mil) on Multi-Layer And Pad POWER-2(1700mil,100mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDCMUCZMFSQGO3KIN4DRDKZNIOCNCRNTLMHQESATII2Y03RPZL1JV"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.383mil|Location2.X=3863.617mil|Location1.Y=2566.383mil|Location2.Y=2693.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.383mil|Location2.X=3863.617mil|Location1.Y=2566.383mil|Location2.Y=2693.617mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad Free-0(2600mil,1400mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.383mil|Location2.X=3863.617mil|Location1.Y=1466.383mil|Location2.Y=1593.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.383mil|Location2.X=3863.617mil|Location1.Y=1466.383mil|Location2.Y=1593.617mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad Free-0(2600mil,300mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1686.383mil|Location2.X=1813.617mil|Location1.Y=1266.383mil|Location2.Y=1393.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1686.383mil|Location2.X=1813.617mil|Location1.Y=1266.383mil|Location2.Y=1393.617mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad Free-0(550mil,100mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1736.383mil|Location2.X=1863.617mil|Location1.Y=3166.383mil|Location2.Y=3293.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1736.383mil|Location2.X=1863.617mil|Location1.Y=3166.383mil|Location2.Y=3293.617mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad Free-0(600mil,2000mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID0OBRJ3K1LOV0CPZGIXTSYGBWVLVNJNWSV1EV2UKFM1I32GXYNURO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2382.398mil|Location2.Y=2393.648mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2382.398mil|Location2.Y=2393.648mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2455.512mil,1148.031mil)(2555.512mil,1148.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3659.879mil|Location2.X=3671.129mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3659.879mil|Location2.X=3671.129mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2455.512mil,1223.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2462.414mil|Location2.Y=2473.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2462.414mil|Location2.Y=2473.664mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2480.512mil,1248.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3739.895mil|Location2.X=3751.145mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3739.895mil|Location2.X=3751.145mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-1(2505.512mil,1198.031mil) on Multi-Layer And Track (2555.512mil,1148.031mil)(2555.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3799.887mil|Location2.X=3811.137mil|Location1.Y=2462.414mil|Location2.Y=2473.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3799.887mil|Location2.X=3811.137mil|Location1.Y=2462.414mil|Location2.Y=2473.664mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-2(2605.512mil,1198.031mil) on Multi-Layer And Track (2480.512mil,1248.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3759.879mil|Location2.X=3771.129mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3759.879mil|Location2.X=3771.129mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-2(2605.512mil,1198.031mil) on Multi-Layer And Track (2555.512mil,1148.031mil)(2555.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.895mil|Location2.X=3851.145mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.895mil|Location2.X=3851.145mil|Location1.Y=2422.406mil|Location2.Y=2433.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-2(2605.512mil,1198.031mil) on Multi-Layer And Track (2655.512mil,948.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2362.414mil|Location2.Y=2373.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2362.414mil|Location2.Y=2373.664mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-3(2505.512mil,1098.031mil) on Multi-Layer And Track (2455.512mil,1148.031mil)(2555.512mil,1148.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3659.879mil|Location2.X=3671.129mil|Location1.Y=2322.406mil|Location2.Y=2333.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3659.879mil|Location2.X=3671.129mil|Location1.Y=2322.406mil|Location2.Y=2333.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-3(2505.512mil,1098.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2455.512mil,1223.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.895mil|Location2.X=3851.145mil|Location1.Y=2322.406mil|Location2.Y=2333.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.895mil|Location2.X=3851.145mil|Location1.Y=2322.406mil|Location2.Y=2333.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-4(2605.512mil,1098.031mil) on Multi-Layer And Track (2655.512mil,948.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3659.879mil|Location2.X=3671.129mil|Location1.Y=2222.406mil|Location2.Y=2233.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3659.879mil|Location2.X=3671.129mil|Location1.Y=2222.406mil|Location2.Y=2233.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-5(2505.512mil,998.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2455.512mil,1223.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2182.398mil|Location2.Y=2193.648mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3699.887mil|Location2.X=3711.137mil|Location1.Y=2182.398mil|Location2.Y=2193.648mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-5(2505.512mil,998.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2655.512mil,948.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3799.887mil|Location2.X=3811.137mil|Location1.Y=2182.398mil|Location2.Y=2193.648mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3799.887mil|Location2.X=3811.137mil|Location1.Y=2182.398mil|Location2.Y=2193.648mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-6(2605.512mil,998.031mil) on Multi-Layer And Track (2455.512mil,948.031mil)(2655.512mil,948.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.895mil|Location2.X=3851.145mil|Location1.Y=2222.406mil|Location2.Y=2233.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.895mil|Location2.X=3851.145mil|Location1.Y=2222.406mil|Location2.Y=2233.656mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.984mil &lt; 10mil) Between Pad ICSP-6(2605.512mil,998.031mil) on Multi-Layer And Track (2655.512mil,948.031mil)(2655.512mil,1248.031mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.984mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDS0ZFB1MSH2LXGXXVTFEPXNXSAB52KMXZ5SCHBDDA5QJSWK5DE3ZJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2219.375mil|Location2.X=2230.625mil|Location1.Y=2152.093mil|Location2.Y=2163.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\thodo\Downloads\AltiumArduinoR3_UNOSheild\ArduinoUnoShield.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2219.375mil|Location2.X=2230.625mil|Location1.Y=2152.093mil|Location2.Y=2163.343mil|Absolute=True">Silk To Silk Clearance Constraint: (9.563mil &lt; 10mil) Between Text "DC-VIN" (1025mil,935mil) on Top Overlay And Track (955mil,919mil)(1145mil,919mil) on Top Overlay Silk Text to Silk Clearance [9.563mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

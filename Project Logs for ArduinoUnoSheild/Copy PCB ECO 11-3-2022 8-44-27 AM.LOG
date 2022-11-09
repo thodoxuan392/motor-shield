@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator= NewDesignator=DC Mini IN
+Change Component Designator: OldDesignator= NewDesignator=DC Mini OUT
+Change Component Designator: OldDesignator= NewDesignator=DC Mini VIN
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini IN
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini OUT
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini VIN

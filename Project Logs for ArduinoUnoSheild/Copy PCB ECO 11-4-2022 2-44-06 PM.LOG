@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=HC05-TX Pin=HC06-3
+Removed Pin From Net: NetName=HC05-RX Pin=HC06-4
+Change Component Comment : Designator= Old Comment=DC Mini IN New Comment=
+Change Component Comment : Designator= Old Comment=DC Mini OUT New Comment=
+Change Component Comment : Designator= Old Comment=DC Mini VIN New Comment=
+Change Component Designator: OldDesignator= NewDesignator=DC Mini IN
+Change Component Designator: OldDesignator= NewDesignator=DC Mini OUT
+Change Component Designator: OldDesignator= NewDesignator=DC Mini VIN
+Change Net Name : Old Net Name=HC05-State New Net Name=IO2
+Added Pin To Net: NetName=HC06-RX Pin=HC06-4
+Added Net: Name=HC06-RX
+Added Pin To Net: NetName=HC06-TX Pin=HC06-3
+Added Net: Name=HC06-TX
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini IN 
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini OUT 
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini VIN 

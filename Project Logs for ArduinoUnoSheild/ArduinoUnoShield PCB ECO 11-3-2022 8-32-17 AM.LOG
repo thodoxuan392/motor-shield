@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=5V Pin=HC05-2
+Removed Pin From Net: NetName=GND Pin=HC05-3
+Removed Pin From Net: NetName=HC05-TX Pin=HC05-4
+Removed Pin From Net: NetName=HC05-RX Pin=HC05-5
+Removed Pin From Net: NetName=HC05-State Pin=HC05-6
+Removed Member From Class: ClassName=ArduinoUnoShield Member=HC05
+Change Component Designator: OldDesignator= NewDesignator=DC Mini IN
+Change Component Designator: OldDesignator= NewDesignator=DC Mini OUT
+Change Component Designator: OldDesignator= NewDesignator=DC Mini VIN
+Added Component: Designator=HC06(HDR/Header/4/2mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "BRAND"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PACKAGE"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PART NO"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "STOCK CODE"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SUPPLIER"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TYPE"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V Pin=HC06-1
+Added Pin To Net: NetName=GND Pin=HC06-2
+Added Pin To Net: NetName=HC05-TX Pin=HC06-3
+Added Pin To Net: NetName=HC05-RX Pin=HC06-4
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini OUT
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component DC Mini VIN
+Added Member To Class: ClassName=ArduinoUnoShield Member=Component HC06
